@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <TextView
+        android:id="@+id/header"
+        android:text="header_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/pitch"
+        android:text="Lean Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:id="@+id/pitchValue"
+        android:text="noValue"
+        android:layout_below="@id/header"
+        android:layout_toRightOf="@id/pitch"
+        android:layout_alignTop="@id/pitch"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/leanRight"
+        android:text="Lean Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pitch"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:id="@+id/leanRightVal"
+        android:text="noValue"
+        android:layout_below="@id/pitchValue"
+        android:layout_toRightOf="@id/leanRight"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+    <TextView
+        android:id="@+id/roll"
+        android:text="roll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leanRight"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="31dp"/>
+
+    <TextView
+        android:id="@+id/rollValue"
+        android:text="noValue"
+        android:layout_below="@id/header"
+        android:layout_toRightOf="@id/roll"
+        android:layout_alignTop="@id/roll"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/azimuth"
+        android:text="azimuth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/roll"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/azimuthValue"
+        android:text="noValue"
+        android:layout_below="@id/header"
+        android:layout_toRightOf="@id/azimuth"
+        android:layout_alignTop="@id/azimuth"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

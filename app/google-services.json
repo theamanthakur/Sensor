@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "591585448976",
+    "project_id": "sensor-8817d",
+    "storage_bucket": "sensor-8817d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591585448976:android:662b06fee1b90064786695",
+        "android_client_info": {
+          "package_name": "com.ttl.sensor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591585448976-tjrjpi4djeminrgkmtddbokponssf29d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAWbqpSzU_x4Ac4GepDoh6TfUtDp3Pnk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591585448976-tjrjpi4djeminrgkmtddbokponssf29d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
