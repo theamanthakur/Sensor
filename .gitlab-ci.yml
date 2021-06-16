@@ -3,4 +3,4 @@ release_upload:
   - ci 
   image: registry.gitlab.com/gitlab-org/release-cli:v0.1.0
   script:
-    - release-cli create --name="Sensor Release" --description="POC of Lean angle and Hang Time"
+    - release-cli --server-url https://gitlab.com --project-id 27409215 create --name="Sensor Release" --description="POC of Lean angle and Hang Time"
