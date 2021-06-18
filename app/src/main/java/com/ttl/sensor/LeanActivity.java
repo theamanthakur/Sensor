@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-public class LeanActivity extends AppCompatActivity  implements SensorEventListener {
+public class LeanActivity extends AppCompatActivity implements SensorEventListener {
     private float x = 0, y = 0, z = 0, x1 = 0;
     DatabaseReference ref;
 
@@ -139,6 +139,7 @@ public class LeanActivity extends AppCompatActivity  implements SensorEventListe
                 if (z < 0) {
                     z = 360 - Math.abs(z);
                 }
+                //x1 gets negative in right tilt and positive in left tilt
 
                 leanLeft.setText(Float.toString(x) + " \u00B0");
                 yValue.setText(Float.toString(y) + " \u00B0");
