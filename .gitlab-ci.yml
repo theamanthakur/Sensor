@@ -1,11 +1,39 @@
-image: rvancea/maven-chrome-jdk8:latest
+before_script:
+  - export GRADLE_USER_HOME=$(pwd)/.gradle
+  - chmod +x ./gradlew
 
-build:
+cache:
+  key: ${CI_PROJECT_ID}
+  paths:
+    - .gradle/
+stages:
+  - build
+  - deploy
+
+assembleDebug:
+  image: jangrewe/gitlab-ci-android
   stage: build
+  only:
+    - master
   script:
-    - mvn compile
+    - echo $KEYSTORE_FILE | base64 -d > my.keystore
+    - ./gradlew assembleRelease
+      -Pandroid.injected.signing.store.file=$(pwd)/my.keystore
+      -Pandroid.injected.signing.store.password=$KEYSTORE_PASSWORD
+      -Pandroid.injected.signing.key.alias=$KEY_ALIAS
+      -Pandroid.injected.signing.key.password=$KEY_PASSWORD
+    - cp app/build/outputs/apk/appname.apk appname.apk
 
-test:
-  stage: test
+  artifacts:
+    expire_in: 7 days
+    paths:
+      - appname.apk
+
+deploy_production:
+  image: node:latest
+  stage: deploy
+  only:
+    - master
   script:
-    - mvn clean test
+    - npm install -g firebase-tools
+    - firebase appdistribution:distribute app.apk --app KjbT27erMcb3r90v9vDVdgRi3Q1qJz30jsUT4s9n --groups "andriod-dev-team" --token "1//0gpwqu5cmvp4pCgYIARAAGBASNwF-L9Ir-VZ8UQ24ra7DwoeazLiIuACBJJUvNO4oWaCSC9rQIZ-YNla72uY20lpnFev395wpOR8"

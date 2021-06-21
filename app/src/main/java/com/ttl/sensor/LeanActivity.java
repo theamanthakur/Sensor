@@ -107,17 +107,16 @@ public class LeanActivity extends AppCompatActivity implements SensorEventListen
                  */
                 if (x < 0) {
                     x = Math.abs(x);
-                    float x2 = Math.abs(x);
+                    float x2 = Math.abs(x);  //here the value can be negative of angle so taking absolute
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            if (x2 >= 20) {
+                            if (x2 >= 20) {     // to send data to firebase
                                 String st = Float.toString(x2);
                                 AddData(st);
 
                             }
-//                            Toast.makeText(LeanActivity.this, "In delay function", Toast.LENGTH_SHORT).show();
 
                         }
                     }, 1000);
@@ -127,17 +126,17 @@ public class LeanActivity extends AppCompatActivity implements SensorEventListen
                 }
                 if (x1 > 90){
                     if (x1 < 0) {
-                        x1 = Math.abs(x1);
+                        x1 = Math.abs(x1); // this is to keep lean between 0-90 degree.
                     }
                     x1 = 360 - x1;
                 }
 
                 if (y < 0) {
-                    y = 360 - Math.abs(y);
+                    y = 360 - Math.abs(y); //calculating roll value
                 }
 
                 if (z < 0) {
-                    z = 360 - Math.abs(z);
+                    z = 360 - Math.abs(z);  //calculating azimuth value
                 }
                 //x1 gets negative in right tilt and positive in left tilt
 
